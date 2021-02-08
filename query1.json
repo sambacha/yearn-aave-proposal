@@ -1,0 +1,256 @@
+{
+	"data": {
+		"reserves": [
+			{
+				"id": "0x0000000000085d4780b73119b644ae5ecd22b3760x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "23180097545228186864378892",
+				"name": "TrueUSD",
+				"price": {
+					"id": "0x0000000000085d4780b73119b644ae5ecd22b376"
+				},
+				"stableBorrowRate": "137907520231365127459021788",
+				"variableBorrowRate": "39402148637532893559720511"
+			},
+			{
+				"id": "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e0x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "11025408416196744654969967",
+				"name": "yearn.finance",
+				"price": {
+					"id": "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e"
+				},
+				"stableBorrowRate": "45528659608188771264015817",
+				"variableBorrowRate": "31870061725732139884811072"
+			},
+			{
+				"id": "0x0d8775f648430679a709e98d2b0cb6250d2887ef0x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "551423206048036131486471",
+				"name": "Basic Attention Token",
+				"price": {
+					"id": "0x0d8775f648430679a709e98d2b0cb6250d2887ef"
+				},
+				"stableBorrowRate": "40836296797262676139860539",
+				"variableBorrowRate": "7585407758083873297902377"
+			},
+			{
+				"id": "0x0f5d2fb29fb7d3cfee444a200298f468908cc9420x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "857633426369639607231596",
+				"name": "Decentraland MANA",
+				"price": {
+					"id": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942"
+				},
+				"stableBorrowRate": "37389935784156063422548639",
+				"variableBorrowRate": "5911948627324850738038911"
+			},
+			{
+				"id": "0x1985365e9f78359a9b6ad760e32412f4a445e8620x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "37775246328215601138369",
+				"name": "Reputation",
+				"price": {
+					"id": "0x1985365e9f78359a9b6ad760e32412f4a445e862"
+				},
+				"stableBorrowRate": "32258433753178373371533386",
+				"variableBorrowRate": "1580903627224861360073370"
+			},
+			{
+				"id": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f9840x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "0",
+				"name": "Uniswap",
+				"price": {
+					"id": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"
+				},
+				"stableBorrowRate": "0",
+				"variableBorrowRate": "0"
+			},
+			{
+				"id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c5990x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "975309382170604314631662",
+				"name": "Wrapped BTC",
+				"price": {
+					"id": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+				},
+				"stableBorrowRate": "41677543083198090547230254",
+				"variableBorrowRate": "9342034466558472437784203"
+			},
+			{
+				"id": "0x2a1530c4c41db0b0b2bb646cb5eb1a67b71586670x7fd53085b9a29d236235d6fc593b47c9c33429f1",
+				"liquidityRate": "0",
+				"name": "Uniswap V1",
+				"price": {
+					"id": "0x2a1530c4c41db0b0b2bb646cb5eb1a67b7158667"
+				},
+				"stableBorrowRate": "0",
+				"variableBorrowRate": "10000000000000000000000000"
+			},
+			{
+				"id": "0x2c4bd064b998838076fa341a83d007fc2fa509570x7fd53085b9a29d236235d6fc593b47c9c33429f1",
+				"liquidityRate": "0",
+				"name": "Uniswap V1",
+				"price": {
+					"id": "0x2c4bd064b998838076fa341a83d007fc2fa50957"
+				},
+				"stableBorrowRate": "0",
+				"variableBorrowRate": "10000000000000000000000000"
+			},
+			{
+				"id": "0x408e41876cccdc0f92210600ef50372656052a380x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "268158171167816964171755",
+				"name": "Republic Token",
+				"price": {
+					"id": "0x408e41876cccdc0f92210600ef50372656052a38"
+				},
+				"stableBorrowRate": "9226569142889101113425371",
+				"variableBorrowRate": "6458598400022370779397760"
+			},
+			{
+				"id": "0x514910771af9ca656af840dff83e8264ecf986ca0x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "15932476119999098598394",
+				"name": "ChainLink Token",
+				"price": {
+					"id": "0x514910771af9ca656af840dff83e8264ecf986ca"
+				},
+				"stableBorrowRate": "32210190102719030383308872",
+				"variableBorrowRate": "1547133071903321268316211"
+			},
+			{
+				"id": "0x6b175474e89094c44da98b954eedeac495271d0f0x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "56419413776313483227948970",
+				"name": "Dai Stablecoin",
+				"price": {
+					"id": "0x6b175474e89094c44da98b954eedeac495271d0f"
+				},
+				"stableBorrowRate": "87431727766087201426183381",
+				"variableBorrowRate": "71170349060435068330547278"
+			},
+			{
+				"id": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae90x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "0",
+				"name": "Aave Token",
+				"price": {
+					"id": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9"
+				},
+				"stableBorrowRate": "0",
+				"variableBorrowRate": "0"
+			},
+			{
+				"id": "0x80fb784b7ed66730e8b1dbd9820afd29931aab030x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "55054241691829283134915",
+				"name": "EthLend Token",
+				"price": {
+					"id": "0x80fb784b7ed66730e8b1dbd9820afd29931aab03"
+				},
+				"stableBorrowRate": "31106985745364288860933109",
+				"variableBorrowRate": "774890021755002202653176"
+			},
+			{
+				"id": "0x97dec872013f6b5fb443861090ad9315428781260x7fd53085b9a29d236235d6fc593b47c9c33429f1",
+				"liquidityRate": "0",
+				"name": "Uniswap V1",
+				"price": {
+					"id": "0x97dec872013f6b5fb443861090ad931542878126"
+				},
+				"stableBorrowRate": "0",
+				"variableBorrowRate": "10000000000000000000000000"
+			},
+			{
+				"id": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a20x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "907126509381607294608332",
+				"name": "Maker",
+				"price": {
+					"id": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2"
+				},
+				"stableBorrowRate": "46944732727580806365683172",
+				"variableBorrowRate": "11861312909306564455978220"
+			},
+			{
+				"id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb480x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "70767745765950144418218870",
+				"name": "USD//C",
+				"price": {
+					"id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+				},
+				"stableBorrowRate": "91755131136947038260142463",
+				"variableBorrowRate": "76214319659771544636832874"
+			},
+			{
+				"id": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f0x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "24063282748291697470887699",
+				"name": "Synthetix Network Token",
+				"price": {
+					"id": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f"
+				},
+				"stableBorrowRate": "39102732029874656820414471",
+				"variableBorrowRate": "76923278435849588184497366"
+			},
+			{
+				"id": "0xcaa7e4656f6a2b59f5f99c745f91ab26d1210dce0x7fd53085b9a29d236235d6fc593b47c9c33429f1",
+				"liquidityRate": "0",
+				"name": "Uniswap V1",
+				"price": {
+					"id": "0xcaa7e4656f6a2b59f5f99c745f91ab26d1210dce"
+				},
+				"stableBorrowRate": "0",
+				"variableBorrowRate": "10000000000000000000000000"
+			},
+			{
+				"id": "0xdd974d5c2e2928dea5f71b9825b8b646686bd2000x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "145474972197402799529872",
+				"name": "Kyber Network Crystal",
+				"price": {
+					"id": "0xdd974d5c2e2928dea5f71b9825b8b646686bd200"
+				},
+				"stableBorrowRate": "32858356370285114335399011",
+				"variableBorrowRate": "2286685096228091468319209"
+			},
+			{
+				"id": "0xe41d2489571d322189246dafa5ebde1f4699f4980x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "6745369279215972089539727",
+				"name": "0x Protocol Token",
+				"price": {
+					"id": "0xe41d2489571d322189246dafa5ebde1f4699f498"
+				},
+				"stableBorrowRate": "72422650157917437335393876",
+				"variableBorrowRate": "29695855110542206134775713"
+			},
+			{
+				"id": "0xe9cf7887b93150d4f2da7dfc6d502b216438f2440x7fd53085b9a29d236235d6fc593b47c9c33429f1",
+				"liquidityRate": "0",
+				"name": "Uniswap V1",
+				"price": {
+					"id": "0xe9cf7887b93150d4f2da7dfc6d502b216438f244"
+				},
+				"stableBorrowRate": "0",
+				"variableBorrowRate": "10000000000000000000000000"
+			},
+			{
+				"id": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee0x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "3936286816737132847986856",
+				"name": "Ethereum",
+				"price": {
+					"id": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+				},
+				"stableBorrowRate": "57225050361199152948237934",
+				"variableBorrowRate": "21780040288959322358590347"
+			},
+			{
+				"id": "0xf173214c720f58e03e194085b1db28b50acdeead0x7fd53085b9a29d236235d6fc593b47c9c33429f1",
+				"liquidityRate": "0",
+				"name": "Uniswap V1",
+				"price": {
+					"id": "0xf173214c720f58e03e194085b1db28b50acdeead"
+				},
+				"stableBorrowRate": "0",
+				"variableBorrowRate": "10000000000000000000000000"
+			},
+			{
+				"id": "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c0x24a42fd28c976a61df5d00d0599c34c4f90748c8",
+				"liquidityRate": "7720568418004482917329",
+				"name": "Enjin Coin",
+				"price": {
+					"id": "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c"
+				},
+				"stableBorrowRate": "1565558718462454892262177",
+				"variableBorrowRate": "1095891102923718424583524"
+			}
+		]
+	}
+}

@@ -6,6 +6,34 @@
 
 > Aave Request for Comment
 
+### Overview
+
+YFI tokens from Yearn’s treasury are deposited into {Maker,Aave} for the
+purpose of borrowing stablecoins {Aave} against it. The {aave}
+governance commits to a stabe and preffered interest rate {aave} for a
+period of five years. Yearn governance on the other hand commits to
+maintaining an LTV of >=50% throughout the period. Implementation
+
+Yearn Finance deposits >=1000 YFI and borrows stablecoins against it,
+such that a minimum of LTV of 50% is maintained for at least five years.
+In return, Yearn Finance is asking the Aave for a stable 3% interest
+rate (aave) for that duration.
+
+#### Rationale
+
+Yearn’s treasury controls high-value capital that warrants special
+treatment given the high interest rate that will be paid during the five
+year commitment.
+
+- This collaboration is a win-win for the token holders of both
+  communities and further strengthens their cooperation.
+
+- The {Maker, Aave} lock-in a guaranteed and large yield from the large
+  line of credit.
+
+- Yearn lock-in a predetermined interest rate thereby decreasing
+  uncertainties around operational costs.
+
 ## YFI as a non-loanable collateral
 
 ### Aave Documentation
@@ -39,6 +67,8 @@ The most volatile currencies REP and LEND have the lowest LTV at 35% and
 40%. The liquidations thresholds are set at 65% to protect Aave users
 from a sharp drop in price which could lead to undercollaterisation
 followed by liquidation.
+
+### Will Move the following Equations to an appendix
 
 ## Liquidation Threashold
 
@@ -132,3 +162,58 @@ Curve, on the other hand, distributes 2 million tokens each day via
 liquidity mining, which will gradually inflate its supply to a maximum
 of 3.03 billion CRV — resulting in an extremely low market-cap-to-FDV
 ratio of 2.64%.
+
+| **Curve**        | **YFI**          |
+| ---------------- | ---------------- |
+| Volatility (30D) | Volatility (30D) |
+| 2.96             | 1.41             |
+| Volatility (90D) | Volatility (90D) |
+| 2.21             | 1.6              |
+| Volatility (1Y)  | Volatility (1Y)  |
+| 2.44             | 2.35             |
+| Sharpe (30D)     | Sharpe (30D)     |
+| 7.34             | 0.414            |
+| Sharpe (90D)     | Sharpe (90D)     |
+| 3.96             | 2.49             |
+| Sharpe (1Y)      | Sharpe (1Y)      |
+| 0.511            | 3.24             |
+
+\*This is the asset's volatility calculated over the past 30 days of
+daily returns.
+
+\*Volatility is defined as the annualized standard-deviation of daily
+returns.
+
+## Calculation Specifics
+
+To calculate correct historically archived deposit rates we use the
+index based rate claculation.
+[source contract link](https://github.com/aave/aave-js/blob/6c74c6df3c9d86a652b3adbf9e285a00f8497f0c/src/helpers/pool-math.ts#L124)
+
+```solidity
+export function calculateAverageRate(andyk, 4 months ago: • initial implementation
+  index0: string,
+  index1: string,
+  timestamp0: number,
+  timestamp1: number
+): string {
+  return valueToBigNumber(index1)
+    .dividedBy(index0)
+    .minus('1')
+    .dividedBy(timestamp1 - timestamp0)
+    .multipliedBy(SECONDS_PER_YEAR)
+    .toString();
+}
+```
+
+Rate: The rate is based on a utilization metric which represents the
+current rate at this point of time. _(POSIX Unix Epoch Time)_
+
+Index: The index keeps track of "growth" also incorporating things like
+the 'flash premium'.
+
+### Acknowlegments
+
+- Wot_Is Goin_On
+- Daniel L.
+- Ali Atiia

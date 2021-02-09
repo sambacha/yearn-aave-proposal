@@ -40,7 +40,8 @@ Short description of the proposed technical solution
 
 - Explain positioning of token in the AAVE ecosystem: which market?
 
-- Provide a brief history of the project and how it overcame stressed conditions
+- Provide a brief history of the project and how it overcame stressed
+  conditions
 
 - How is the asset currently used?
 
@@ -52,7 +53,8 @@ Short description of the proposed technical solution
 
 - Social channels data (Size of communities, activity on Github)
 
-- Contracts date of deployments, number of transactions, number of holders for tokens
+- Contracts date of deployments, number of transactions, number of
+  holders for tokens
 
 ## {{ Technical Specifications }}
 

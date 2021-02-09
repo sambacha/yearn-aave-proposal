@@ -1,0 +1,24 @@
+{
+  "name": "yearn-aave-proposal",
+  "version": "1.0.0",
+  "description": "yearn arc and aip for aavae governance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sambacha/yearn-aave-proposal.git"
+  },
+  "keywords": [
+    "aave",
+    "yearn",
+    "ethereum"
+  ],
+  "author": "SEE CONTRIBUTORS",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/sambacha/yearn-aave-proposal/issues"
+  },
+  "homepage": "https://github.com/sambacha/yearn-aave-proposal#readme"
+}

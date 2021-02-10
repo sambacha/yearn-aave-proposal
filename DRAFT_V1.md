@@ -6,62 +6,107 @@
 
 > Aave Request for Comment
 
-<br />
-<br />
-
 - [Yearn ARC](#yearn-arc)
   - [Overview](#overview)
+    - [Implementation](#implementation)
+    - [Revolver](#revolver)
     - [Rationale](#rationale)
   * [YFI as a non-loanable collateral](#yfi-as-a-non-loanable-collateral)
     - [Aave Documentation](#aave-documentation)
-  * [Disabled Depositing reduces risk](#disabled-depositing-reduces-risk)
-    - [Will Move the following Equations to an appendix](#will-move-the-following-equations-to-an-appendix)
+  * [Disabled Borrowing reduces risk](#disabled-borrowing-reduces-risk)
+  * [Risk Mitigation](#risk-mitigation)
+    - [Liquidation Window](#liquidation-window)
+    * [Will Move the following Equations to an appendix](#will-move-the-following-equations-to-an-appendix)
   * [Liquidation Threshold](#liquidation-threshold)
   * [Health Factor](#health-factor)
-  * [Utilisaation Rate](#utilisaation-rate)
-  * [Historical Utilisation Rate](#historical-utilisation-rate)
+  * [Utilisation Rate](#utilisation-rate)
+  * [Comparison to existing assets](#comparison-to-existing-assets)
+    - [Historical Utilisation Rate](#historical-utilisation-rate)
   * [Interest Rate Model](#interest-rate-model)
   * [Valuation Risk](#valuation-risk)
   * [Comparisons](#comparisons)
-  * [Calculation Specifics](#calculation-specifics)
+    - [Calculation Specifics](#calculation-specifics)
     - [Acknowledgments](#acknowledgments)
 
 ### Overview
 
 YFI tokens from Yearn’s treasury are deposited into {Aave} for the
 purpose of borrowing stablecoins {Aave} against it. The {aave}
-governance commits to a stabe and preffered interest rate {aave} for a
-period of five years. Yearn governance on the other hand commits to
-maintaining an LTV of >=50% throughout the period. Implementation
+governance commits to a stable and preferred interest rate {aave} for a
+period defined in the “Revolver” section.
+
+#### Implementation
 
 Yearn Finance deposits >=1000 YFI and borrows stablecoins against it,
-such that a minimum of LTV of 50% is maintained for at least five years.
-In return, Yearn Finance is asking the Aave for a stable 3% interest
-rate (aave) for that duration.
+such that a minimum of LTV of 50% is maintained for a period of time.
+{time_d}. In return, Yearn Finance is asking the Aave for a stable 3%
+interest rate (aave) for that duration.
+
+| Key                   | Value                 |
+| --------------------- | --------------------- |
+| Reserve Factor        | >5% \$RFACTOR <10%    |
+| Liquidation Threshold | 85%                   |
+| Liquidation Bonus     | 5%                    |
+| LTV_minimum           | 50%                   |
+| LoanAmount            | 1mm > \$AMOUNT < 10mm |
+| Basis points          | 375                   |
+| Time_d                | Months                |
+
+Key Value Time_d Months LTV_minimum 50% LoanAmount
+
+Basis points 375
+
+#### Revolver
+
+We introduce a vehicle named, “Revolver” that is extended to select
+applicants in which the facilitator (Aave) provides certain privileges
+to the
+
+\*Revolver is another name for a Revolving Credit Facility.
 
 #### Rationale
 
 Yearn’s treasury controls high-value capital that warrants special
-treatment given the high interest rate that will be paid during the five
-year commitment.
+treatment given the high interest rate that will be paid during the
+course of the credit terms.
 
 - This collaboration is a win-win for the token holders of both
   communities and further strengthens their cooperation.
 
-- The {Maker, Aave} lock-in a guaranteed and large yield from the large
-  line of credit.
+- The lock-in is a guaranteed as well as large yield for the large line
+  of credit.
+
+Through a new potential vault class Yearn will enable reduced
+liquidation uncertainty through a new incentivized process without the
+need for any protocol or contract changes. See section “Liquidation
+Window”
 
 - Yearn lock-in a predetermined interest rate thereby decreasing
   uncertainties around operational costs.
 
+- Through the Yearn Ecosystem, Aave will be able to draw additional loan
+  originators, while also reducing liquidation risk through the Yearn
+  Liquidation Window.
+
+By adopting this proposal, not only will the unavoidable issues of
+reducing the need for capital inefficiencies in the required
+collateralization ratio be significantly reduced, it will also secure
+significant improvements that go beyond the ‘faster, better, cheaper,
+incremental improvements that have been seen usually.
+
 ## YFI as a non-loanable collateral
+
+There are 3 main sections to this proposal Disabling borrowing
+Identifying risks for both originator and lender Solving the issues of
+risks and explaining why disabling borrowing provides additional
+opportunities for Aave.
 
 ### Aave Documentation
 
 [disabling lending on asset](https://docs.aave.com/developers/v/1.0/developing-on-aave/the-protocol/lendingpool#reserveusedascollateraldisabled)
 [source, LendingPool.sol](https://github.com/aave/aave-protocol/blob/9cf250b22d63b0c6a2accd9e0fe64b0b045557d8/contracts/lendingpool/LendingPool.sol#L142)
 
-## Disabled Depositing reduces risk
+## Disabled Borrowing reduces risk
 
 Currencies only enabled for depositing and borrowing (not usable as
 collaterals) present lower risk for the protocol. Collaterals are the
@@ -85,8 +130,56 @@ highest liquidation threshold at 80%.
 
 The most volatile currencies REP and LEND have the lowest LTV at 35% and
 40%. The liquidations thresholds are set at 65% to protect Aave users
-from a sharp drop in price which could lead to undercollaterisation
+from a sharp drop in price which could lead to under collateralization
 followed by liquidation.
+
+## Risk Mitigation
+
+Manually maintaining sufficiently high collateral-to-debt ratios is
+infeasible in times of high market volatility. This exposes a borrower
+to high liquidation risk. Traditionally the accepted solution has been
+to supply a sufficiently high amount of collateral (over
+collateralization). It so follows that as more collateral is supplied,
+the higher the opportunity cost to the borrower of not being able to
+allocate these funds elsewhere and generate earnings from them.
+
+#### Liquidation Window
+
+We suggest a solution to this problem that does not involve any protocol
+upgrades. Yearn shall provision a new vault to act as a “Liquidation
+Window”. This Liquidation window acts as a facility in which open market
+operations can be funded and deployed quickly. Open market operations
+are in essence transfers to subscribed users who wish to protect their
+positions from becoming under collateralized. In essence it acts as a
+‘liquidity refill’. So, by accepting deposits which can be employed to
+generate earnings until they are needed as a collateral to ‘top up’ on
+Aave’s users, they are afforded
+
+The “liquidation window” generates a return for depositors (LP’s) ,
+while protecting borrowers of over-collateralized loans against becoming
+liquidable.
+
+Liquidity providers (LPs) may deposit funds into asset-specific pools in
+exchange for asset-specific “yaTokens” [3] . Vault deposits are employed
+in two ways:
+
+1.  Redemption for the underlying asset: funds in a vault may be used as
+    reserve[4] collateral, ready to increase collateral-to-debt ratios
+    on subscribed borrow positions When collateral top ups occur, a fee
+    is charged on the increment and subsequently distributed amongst the
+    LPs for the vault of the underlying collateral asset.
+
+2.  A variable amount of the deposits in each vault is allocated via
+    Yearns ecosystem of strategies to generate additional yield via big
+    brains[5]. The generated yield by a vault s strategy is ultimately
+    diverted back into the vault and thereby distributed amongst the
+    vault LPs.
+
+\*Subscribed meaning users who have purchased or otherwise enrolled into
+the liquidation window programme. [3]. Example would be DAI for yDAI or
+DAI for aDAI [4] Reserve collateral is those deposits used in the
+transactions that recollateralize under collateralized positions of
+subscribed users. [5] Only the biggest need apply.
 
 ### Will Move the following Equations to an appendix
 
@@ -110,7 +203,7 @@ $$
 
 Market risks have the most direct impact on the risk parameters:
 
-## Utilisaation Rate
+## Utilisation Rate
 
 <!--
 $$
@@ -119,7 +212,9 @@ $$
 -->
 <img src="https://render.githubusercontent.com/render/math?math=U%3D%5Ctext%20%7B%20TotalBorrows%20%2F%20TotalLiquidity%20%7D">
 
-## Historical Utilisation Rate
+## Comparison to existing assets
+
+### Historical Utilisation Rate
 
 Since inception, across the assets of the Aave Market, full utilisation
 was reached only 1% of days since inception. The table below shows the
@@ -149,7 +244,7 @@ $$
 > source: aave documentation
 
 ​Yearn is an ecosystem of financial products governed by the YFI token.
-The smart platform offers different optimised strategies based on DeFi
+The smart platform offers different optimized strategies based on DeFi
 primitives such as Aave, gaining immense traction and attracting nearly
 a billion dollars of AUM in just over a month.
 
@@ -204,10 +299,10 @@ daily returns.
 \*Volatility is defined as the annualized standard-deviation of daily
 returns.
 
-## Calculation Specifics
+### Calculation Specifics
 
 To calculate correct historically archived deposit rates we use the
-index based rate claculation.
+index based rate calculation.
 [source contract link](https://github.com/aave/aave-js/blob/6c74c6df3c9d86a652b3adbf9e285a00f8497f0c/src/helpers/pool-math.ts#L124)
 
 ```solidity
@@ -218,11 +313,11 @@ export function calculateAverageRate(andyk, 4 months ago: • initial implementa
   timestamp1: number
 ): string {
   return valueToBigNumber(index1)
-    .dividedBy(index0)
-    .minus('1')
-    .dividedBy(timestamp1 - timestamp0)
-    .multipliedBy(SECONDS_PER_YEAR)
-    .toString();
+	.dividedBy(index0)
+	.minus('1')
+	.dividedBy(timestamp1 - timestamp0)
+	.multipliedBy(SECONDS_PER_YEAR)
+	.toString();
 }
 ```
 

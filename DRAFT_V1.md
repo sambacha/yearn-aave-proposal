@@ -171,15 +171,6 @@ subscribed users. [5] Only the biggest need apply.
 
 Market risks have the most direct impact on the risk parameters:
 
-## Utilisation Rate
-
-<!--
-$$
-U=\text { TotalBorrows / TotalLiquidity }
-$$
--->
-<img src="https://render.githubusercontent.com/render/math?math=U%3D%5Ctext%20%7B%20TotalBorrows%20%2F%20TotalLiquidity%20%7D">
-
 ## Comparison to existing assets
 
 ### Historical Utilisation Rate
@@ -246,6 +237,8 @@ returns.
 
 ## Summary
 
+@FIXME
+
 ###### Disclaimers
 
 Yearn Finance is an ecosystem of financial products governed by the YFI
@@ -263,6 +256,15 @@ evaluating the merits and risks associated with the use of Yearn
 Finance’s systems, services or products.
 
 ## Appendix
+
+## Utilisation Rate
+
+<!--
+$$
+U=\text { TotalBorrows / TotalLiquidity }
+$$
+-->
+<img src="https://render.githubusercontent.com/render/math?math=U%3D%5Ctext%20%7B%20TotalBorrows%20%2F%20TotalLiquidity%20%7D">
 
 ## Interest Rate Model
 

@@ -28,7 +28,7 @@
     - [Calculation Specifics](#calculation-specifics)
     - [Acknowledgments](#acknowledgments)
 
-### Overview
+### Abstract
 
 YFI tokens from Yearn’s treasury are deposited into {Aave} for the
 purpose of borrowing stablecoins {Aave} against it. The {aave}
@@ -51,18 +51,6 @@ interest rate (aave) for that duration.
 | LoanAmount            | 1mm > \$AMOUNT < 10mm |
 | Basis points          | 375                   |
 | Time_d                | Months                |
-
-Key Value Time_d Months LTV_minimum 50% LoanAmount
-
-Basis points 375
-
-#### Revolver
-
-We introduce a vehicle named, “Revolver” that is extended to select
-applicants in which the facilitator (Aave) provides certain privileges
-to the
-
-\*Revolver is another name for a Revolving Credit Facility.
 
 #### Rationale
 
@@ -181,26 +169,6 @@ DAI for aDAI [4] Reserve collateral is those deposits used in the
 transactions that recollateralize under collateralized positions of
 subscribed users. [5] Only the biggest need apply.
 
-### Will Move the following Equations to an appendix
-
-## Liquidation Threshold
-
-<!--
-$$
-\text { Liquidation Threshold }=\frac{\sum \text { Collateral }_{i} \text { in } E T H \times \text { Liquidation } \text { Threshold }_{i}}{\text { Total Collateral in ETH }}
-$$
--->
-<img src="https://render.githubusercontent.com/render/math?math=%5Ctext%20%7B%20Liquidation%20Threshold%20%7D%3D%5Cfrac%7B%5Csum%20%5Ctext%20%7B%20Collateral%20%7D_%7Bi%7D%20%5Ctext%20%7B%20in%20%7D%20E%20T%20H%20%5Ctimes%20%5Ctext%20%7B%20Liquidation%20%7D%20%5Ctext%20%7B%20Threshold%20%7D_%7Bi%7D%7D%7B%5Ctext%20%7B%20Total%20Collateral%20in%20ETH%20%7D%7D">
-
-## Health Factor
-
-<!--
-$$
-H_{f}=\frac{\sum \text { Collateral }_{i} \text { in } E T H \times \text { Liquidation } \text { Threshold }_{i}}{\text { Total Borrows in } E T H+\text { Total Fees in } E T H}
-$$
--->
-<img src="https://render.githubusercontent.com/render/math?math=H_%7Bf%7D%3D%5Cfrac%7B%5Csum%20%5Ctext%20%7B%20Collateral%20%7D_%7Bi%7D%20%5Ctext%20%7B%20in%20%7D%20E%20T%20H%20%5Ctimes%20%5Ctext%20%7B%20Liquidation%20%7D%20%5Ctext%20%7B%20Threshold%20%7D_%7Bi%7D%7D%7B%5Ctext%20%7B%20Total%20Borrows%20in%20%7D%20E%20T%20H%2B%5Ctext%20%7B%20Total%20Fees%20in%20%7D%20E%20T%20H%7D">
-
 Market risks have the most direct impact on the risk parameters:
 
 ## Utilisation Rate
@@ -226,49 +194,26 @@ $\begin{array}{ll}=100 \% & 1 \% \\ >95 \% & 2.8 \% \\ >90 \% & 4.6 \% \\ >80 \%
 
 [\*Historical Utilisation Rate, source Aave Documentation](https://docs.aave.com/risk/liquidity-risk/historical-utilization)
 
-## Interest Rate Model
-
-<!--
-$$
-\begin{array}{ll}
-\text { if } U<U_{\text {optimal }}: & R_{t}=R_{0}+\frac{U_{t}}{U_{\text {optimal }}} R_{\text {slope1 }} \\
-\text { if } U \geq U_{\text {optimal }}: & R_{t}=R_{0}+R_{\text {slope } 1}+\frac{U_{t}-U_{\text {optimal }}}{1-U_{\text {optimal }}} R_{\text {slope2 }}
-\end{array}
-$$
--->
-
-<img src="https://render.githubusercontent.com/render/math?math=%5Cbegin%7Barray%7D%7Bll%7D%0A%5Ctext%20%7B%20if%20%7D%20U%3CU_%7B%5Ctext%20%7Boptimal%20%7D%7D%3A%20%26%20R_%7Bt%7D%3DR_%7B0%7D%2B%5Cfrac%7BU_%7Bt%7D%7D%7BU_%7B%5Ctext%20%7Boptimal%20%7D%7D%7D%20R_%7B%5Ctext%20%7Bslope1%20%7D%7D%20%5C%5C%0A%5Ctext%20%7B%20if%20%7D%20U%20%5Cgeq%20U_%7B%5Ctext%20%7Boptimal%20%7D%7D%3A%20%26%20R_%7Bt%7D%3DR_%7B0%7D%2BR_%7B%5Ctext%20%7Bslope%20%7D%201%7D%2B%5Cfrac%7BU_%7Bt%7D-U_%7B%5Ctext%20%7Boptimal%20%7D%7D%7D%7B1-U_%7B%5Ctext%20%7Boptimal%20%7D%7D%7D%20R_%7B%5Ctext%20%7Bslope2%20%7D%7D%0A%5Cend%7Barray%7D">
-
 ## Valuation Risk
 
-> source: aave documentation
+> source: _Aave documentation_
 
-​Yearn is an ecosystem of financial products governed by the YFI token.
-The smart platform offers different optimized strategies based on DeFi
-primitives such as Aave, gaining immense traction and attracting nearly
-a billion dollars of AUM in just over a month.
-
-The governance token YFI is distributed to users who provide liquidity
-for the various products. The token holders discuss strategies and vote
-on policies in the governance forum while the technical side is led by
-Andrey Cronje.
-
-YFI Smart contract Risk: B-
+**YFI Smart contract Risk: B-**
 
 The YFI smart contract was deployed on the 17th of July yet it already
 holds more transactions and holders than some other assets of portfolio.
 The simple ERC20 implementation with permissions only to the governance
 contract controlled by the YFI holders leads to a reduced technical risk
 
-YFI Counterparty Risk: B
+**YFI Counterparty Risk: B**
 
 YFI is fully decentralized, its distribution to Yearn liquidity
 providers is among the fairest and most transparent. The community is
 already strong of 6,000 holders.
 
-YFI Market Risk: B-
+**YFI Market Risk: B-**
 
-## Comparisons
+## Asset Risk Comparision
 
 Yearn.finance allocated its total supply of tokens within a week, which
 means that its market-cap-to-FDV ratio is equal to 100%.
@@ -299,6 +244,39 @@ daily returns.
 \*Volatility is defined as the annualized standard-deviation of daily
 returns.
 
+## Summary
+
+###### Disclaimers
+
+Yearn Finance is an ecosystem of financial products governed by the YFI
+token. The smart platform offers different optimized strategies based on
+DeFi primitives such as Aave. [www.yearn.finance](https://yearn.finance)
+
+The information in this document is intended for informative purposes
+only.
+
+All investing involves the risk of loss. Past performance is not a
+guarantee of future results. Yearn Finance does not make suitability
+determinations, nor does it make investment recommendations. You alone
+are responsible for making your investment and trading decisions and for
+evaluating the merits and risks associated with the use of Yearn
+Finance’s systems, services or products.
+
+## Appendix
+
+## Interest Rate Model
+
+<!--
+$$
+\begin{array}{ll}
+\text { if } U<U_{\text {optimal }}: & R_{t}=R_{0}+\frac{U_{t}}{U_{\text {optimal }}} R_{\text {slope1 }} \\
+\text { if } U \geq U_{\text {optimal }}: & R_{t}=R_{0}+R_{\text {slope } 1}+\frac{U_{t}-U_{\text {optimal }}}{1-U_{\text {optimal }}} R_{\text {slope2 }}
+\end{array}
+$$
+-->
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cbegin%7Barray%7D%7Bll%7D%0A%5Ctext%20%7B%20if%20%7D%20U%3CU_%7B%5Ctext%20%7Boptimal%20%7D%7D%3A%20%26%20R_%7Bt%7D%3DR_%7B0%7D%2B%5Cfrac%7BU_%7Bt%7D%7D%7BU_%7B%5Ctext%20%7Boptimal%20%7D%7D%7D%20R_%7B%5Ctext%20%7Bslope1%20%7D%7D%20%5C%5C%0A%5Ctext%20%7B%20if%20%7D%20U%20%5Cgeq%20U_%7B%5Ctext%20%7Boptimal%20%7D%7D%3A%20%26%20R_%7Bt%7D%3DR_%7B0%7D%2BR_%7B%5Ctext%20%7Bslope%20%7D%201%7D%2B%5Cfrac%7BU_%7Bt%7D-U_%7B%5Ctext%20%7Boptimal%20%7D%7D%7D%7B1-U_%7B%5Ctext%20%7Boptimal%20%7D%7D%7D%20R_%7B%5Ctext%20%7Bslope2%20%7D%7D%0A%5Cend%7Barray%7D">
+
 ### Calculation Specifics
 
 To calculate correct historically archived deposit rates we use the
@@ -326,6 +304,24 @@ current rate at this point of time. _(POSIX Unix Epoch Time)_
 
 Index: The index keeps track of "growth" also incorporating things like
 the 'flash premium'.
+
+## Liquidation Threshold
+
+<!--
+$$
+\text { Liquidation Threshold }=\frac{\sum \text { Collateral }_{i} \text { in } E T H \times \text { Liquidation } \text { Threshold }_{i}}{\text { Total Collateral in ETH }}
+$$
+-->
+<img src="https://render.githubusercontent.com/render/math?math=%5Ctext%20%7B%20Liquidation%20Threshold%20%7D%3D%5Cfrac%7B%5Csum%20%5Ctext%20%7B%20Collateral%20%7D_%7Bi%7D%20%5Ctext%20%7B%20in%20%7D%20E%20T%20H%20%5Ctimes%20%5Ctext%20%7B%20Liquidation%20%7D%20%5Ctext%20%7B%20Threshold%20%7D_%7Bi%7D%7D%7B%5Ctext%20%7B%20Total%20Collateral%20in%20ETH%20%7D%7D">
+
+## Health Factor
+
+<!--
+$$
+H_{f}=\frac{\sum \text { Collateral }_{i} \text { in } E T H \times \text { Liquidation } \text { Threshold }_{i}}{\text { Total Borrows in } E T H+\text { Total Fees in } E T H}
+$$
+-->
+<img src="https://render.githubusercontent.com/render/math?math=H_%7Bf%7D%3D%5Cfrac%7B%5Csum%20%5Ctext%20%7B%20Collateral%20%7D_%7Bi%7D%20%5Ctext%20%7B%20in%20%7D%20E%20T%20H%20%5Ctimes%20%5Ctext%20%7B%20Liquidation%20%7D%20%5Ctext%20%7B%20Threshold%20%7D_%7Bi%7D%7D%7B%5Ctext%20%7B%20Total%20Borrows%20in%20%7D%20E%20T%20H%2B%5Ctext%20%7B%20Total%20Fees%20in%20%7D%20E%20T%20H%7D">
 
 ### Acknowledgments
 

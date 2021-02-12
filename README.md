@@ -1,8 +1,8 @@
 ---
-
-title: Yearn Finance ARC description: draft ARC version: 2021.02.11 URL:
-{link_to_post} tags:
-
+title: Yearn Finance ARC 
+description: draft ARC 
+version: 2021.02.11 
+URL:{link_to_post} tags:
 ---
 
 # Yearn Finance ARC
